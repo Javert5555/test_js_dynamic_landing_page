@@ -1,7 +1,7 @@
 const time = document.querySelector('.time'),
     greeting = document.querySelector('.greeting'),
-    name = document.querySelector('.name'),
-    focus = document.querySelector('.focus')
+    userName = document.querySelector('.user-name'),
+    userFocus = document.querySelector('.user-focus')
     container = document.querySelector('.container');
 
 // Show time
@@ -53,7 +53,58 @@ let setBackgroundGreet = () => {
 
 }
 
+//get userName, userFocus
+
+let getUserName = () => {
+    if (localStorage.getItem('userName') === null) {
+        userName.textContent = '[Enter userName]';
+    } else {
+        userName.textContent = localStorage.getItem('userName');
+    }
+}
+
+let getUserFocus = () => {
+    if (localStorage.getItem('userFocus') === null) {
+        userFocus.textContent = '[Enter userFocus]';
+    } else {
+        userFocus.textContent = localStorage.getItem('userFocus');
+    }
+}
+
+//set userName, userFocus
+
+let setUserName = (e) => {
+    if (e.type === 'keypress') {
+        if (e.which == 13 || e.key === 13) {
+            localStorage.setItem('userName', e.target.innerText);
+            userName.blur();
+        }
+    } else {
+        localStorage.setItem('userName', e.target.innerText);
+    }
+    
+};
+
+let setUserFocus = (e) => {
+    if (e.type === 'keypress') {
+        if (e.which == 13 || e.key === 13) {
+            localStorage.setItem('userFocus', e.target.innerText);
+            userFocus.blur();
+        }
+    } else {
+        localStorage.setItem('userFocus', e.target.innerText);
+    }
+    
+};
+
+userName.addEventListener('keypress', setUserName);
+userName.addEventListener('blur', setUserName);
+userFocus.addEventListener('keypress', setUserFocus);
+userFocus.addEventListener('blur', setUserFocus);
+
 showTime();
 setBackgroundGreet();
+getUserName();
+getUserFocus();
 
 // time.addEventListener()

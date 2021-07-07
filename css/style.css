@@ -40,6 +40,37 @@ h2 {
     opacity: .8;
 }
 
+.container-valute {
+    max-width: 600px;
+    width: 100%;
+
+    margin-top: 5rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.valute {
+    font-size: 1.7rem;
+    padding-right: 30px;
+}
+
+.valute:last-child {
+    padding-right: 0;
+}
+
+.usd, .eur, .btc {
+    margin-left: .6rem;
+}
+
+.usd-icon, .eur-icon {
+    color: rgb(0, 156, 60);
+}
+
+.btc-icon {
+    color: rgb(235, 220, 11);
+}
+
 @media(max-width: 700px) {
     .time {
         font-size: 5rem;

@@ -27,24 +27,32 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+/* Time */
+
 .time {
     font-size: 7rem;
 }
 
-h1 {
+/* Greeting */
+
+.greeting-user-name {
     margin-bottom: 2.5rem;
 }
 
-h2 {
+/* Focus */
+
+.focus-text {
     margin-bottom: .5rem;
     opacity: .8;
 }
+
+/* Valute */
 
 .container-valute {
     max-width: 600px;
     width: 100%;
 
-    margin-top: 5rem;
+    margin-top: 1rem;
 
     display: flex;
     justify-content: center;
@@ -74,5 +82,17 @@ h2 {
 @media(max-width: 700px) {
     .time {
         font-size: 5rem;
+    }
+
+    .container-valute {
+        flex-wrap: wrap;
+    }
+
+    .valute {
+        width: 100%;
+        
+        padding-right: 0;
+
+        text-align: center;
     }
 }

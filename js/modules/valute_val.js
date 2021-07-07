@@ -1,7 +1,5 @@
 let setValueToValutes = valuteNames => { // принимает в виде аргумента название валюты
 
-    console.log(valuteNames)
-
     const request = fetch('https://www.cbr-xml-daily.ru/daily_json.js');
 
     request
@@ -27,14 +25,14 @@ let setValueToValutes = valuteNames => { // принимает в виде ар�
     .catch(
         err => {
             valuteDOMelement.innerText = "Неизвестно";
-            console.log(err)
+            console.log(err);
         }
     );
 
 };
 
 setValueToValutes(['USD', 'EUR']);
-// setValue('USD');
+
 
 
 //////\\\\\\

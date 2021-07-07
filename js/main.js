@@ -31,6 +31,7 @@ let setBackgroundGreet = () => {
         document.body.style.backgroundImage = "url('./images/night.jpg')";
         greeting.textContent = 'Good night';
         document.body.style.color = '#fff';
+        document.body.style.backgroundPosition = 'center, center';
         
     } else if (hours < 12) {
         //morning

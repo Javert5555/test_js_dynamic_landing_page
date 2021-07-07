@@ -1,4 +1,6 @@
-let setValueToValutes = (valuteNames) => { // принимает в виде аргумента название валюты
+let setValueToValutes = valuteNames => { // принимает в виде аргумента название валюты
+
+    console.log(valuteNames)
 
     const request = fetch('https://www.cbr-xml-daily.ru/daily_json.js');
 
@@ -8,14 +10,15 @@ let setValueToValutes = (valuteNames) => { // принимает в виде а�
     )
     .then(
         data => {
+            let valutes = {};
+                
+            Object.assign(valutes, data.Valute); // клонируем объект с валютами
             for (let valuteName of valuteNames) {
                 let valuteDOMelement = document.querySelector(`.${valuteName.toLowerCase()}`); // получаем элемент DOM для этой валюты
-                let valutes = {};
-                
-                Object.assign(valutes, data.Valute); // клонируем объект с валютами
+
                 for (key in valutes) {
                     if (valutes[key].CharCode === valuteName.toUpperCase()) { // проверяем на соответсвие имени необходимой валюты
-                        valuteDOMelement.innerText = `${valutes.USD.Value.toFixed(2)} RUB`;
+                        valuteDOMelement.innerText = `${valutes[key].Value.toFixed(2)} RUB`;
                     }
                 }
             }

@@ -29,7 +29,7 @@ let setBackgroundGreet = () => {
     if (hours < 6 || (hours > 22 && hours < 24)) {
         //night
         document.body.style.backgroundImage = "url('./images/night.jpg')";
-        greeting.textContent = 'Good evening';
+        greeting.textContent = 'Good night';
         document.body.style.color = '#fff';
         
     } else if (hours < 12) {

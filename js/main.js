@@ -43,6 +43,7 @@ let setBackgroundGreet = () => {
         // afternoon
         document.body.style.backgroundImage = "url('./images/afternoon.jpg')";
         greeting.textContent = 'Good afternoon';
+        document.body.style.backgroundPosition = 'center, center';
         
     } else {
         //evening

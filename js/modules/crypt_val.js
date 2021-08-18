@@ -5,7 +5,7 @@ let setValueToBTC = async () => {
     try{
         const response = await fetch('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR');
         const data = await response.json();
-        Object.assign(btcPrice, data); // клонируем объект с валютами
+        Object.assign(btcPrice, data); // cloning object with currencies
         btcDOMelement.innerText = `${Math.round(btcPrice.USD)} USD`;        
     } catch(err) {
         btcDOMelement.innerText = "Неизвестно";
@@ -15,7 +15,3 @@ let setValueToBTC = async () => {
 };
 
 setValueToBTC()
-
-//////\\\\\\
-// запустить live server и прикрутить export 
-//////\\\\\\
